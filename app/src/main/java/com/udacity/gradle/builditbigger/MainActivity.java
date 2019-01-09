@@ -13,6 +13,8 @@ import com.example.android.androidlib.JokeActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String JOKE_KEY = "JOKE_KEY";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFinish(String joke) {
                 Intent intent = new Intent(MainActivity.this, JokeActivity.class);
-                intent.putExtra("JOKE_KEY", joke);
+                intent.putExtra(JOKE_KEY, joke);
                 startActivity(intent);
             }
         }).execute();

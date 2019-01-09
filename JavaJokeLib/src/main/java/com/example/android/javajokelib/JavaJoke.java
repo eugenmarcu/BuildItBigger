@@ -1,6 +1,5 @@
 package com.example.android.javajokelib;
 
-import java.util.Random;
 
 public class JavaJoke {
 

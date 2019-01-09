@@ -1,6 +1,7 @@
 package com.udacity.gradle.builditbigger;
 
 import android.support.test.runner.AndroidJUnit4;
+import android.util.Log;
 
 import com.example.android.javajokelib.JavaJoke;
 
@@ -11,6 +12,8 @@ import static junit.framework.Assert.assertNotNull;
 
 @RunWith(AndroidJUnit4.class)
 public class EndPointAsyncTaskTest {
+
+    private static final String TAG = EndPointAsyncTaskTest.class.getName();
 
     private String joke;
 
@@ -27,9 +30,9 @@ public class EndPointAsyncTaskTest {
         try {
             Thread.sleep(10000);
             joke = endPointAsyncTask.get();
-            assertNotNull(JavaJoke.getJoke(), joke);
+            assertNotNull(joke);
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e(TAG, e.getMessage());
         }
     }
 }

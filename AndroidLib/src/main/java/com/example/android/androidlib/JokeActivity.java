@@ -7,6 +7,8 @@ import android.widget.TextView;
 
 public class JokeActivity extends AppCompatActivity {
 
+    public static final String JOKE_KEY = "JOKE_KEY";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,10 +18,12 @@ public class JokeActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        Bundle bundle = getIntent().getExtras();
-        String joke = bundle.getString("JOKE_KEY");
-        TextView jokeTV = findViewById(R.id.joke_lib_tv);
-        jokeTV.setText(joke);
+        if(getIntent().hasExtra(JOKE_KEY)) {
+            Bundle bundle = getIntent().getExtras();
+            String joke = bundle.getString(JOKE_KEY);
+            TextView jokeTV = findViewById(R.id.joke_lib_tv);
+            jokeTV.setText(joke);
+        }
     }
 
     @Override
