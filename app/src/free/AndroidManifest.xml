@@ -2,14 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.udacity.gradle.builditbigger">
 
-        <application>
+    <application>
         <!--This meta-data tag is required to use Google Play Services.-->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-7096098488327968~1034015342"/>
+            android:value="ca-app-pub-7096098488327968~1034015342" />
 
         <!--Include the AdActivity configChanges and theme. -->
         <activity
